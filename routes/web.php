@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\FormSubmited;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -18,9 +19,25 @@ Route::get('/', function () {
     return view('home');
 });
 
+//manager rotes
 Route::get('/manager', 'ManagerController@index');
+
+//secretar routes
 Route::get('/secretary', 'SecretaryController@index');
+Route::post('/secretary', 'SecretaryController@create')->name("secretary.create");
 
+//other routes
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+// Route::get('/counter', function(){
+//     return view("counter");
+// });
+// Route::get('/sender', function(){
+//     return view("sender");
+// });
+// Route::post('/sender', function(){
+//     $text = request()->content;
+//     event(new FormSubmited($text));
+// });

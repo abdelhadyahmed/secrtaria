@@ -22,18 +22,20 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td colspan="2">أحمد محمد</td>
-						<td>طلب أجازة</td>
-						<td>أوامر من العميد</td>
-						<td colspan="2">
-							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="fa fa-check"></i></a>
-							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fa fa-times"></i></a>
-						</td>
-					</tr> 
+                    @foreach ($visitors as $visitor )
+                        <tr>
+                            <td colspan="2">{{$visitor->name}}</td>
+                            <td>{{$visitor->reason}}</td>
+                            <td>{{$visitor->notes}}</td>
+                            <td colspan="2">
+                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="fa fa-check"></i></a>
+                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fa fa-times"></i></a>
+                            </td>
+                        </tr>
+                    @endforeach
 				</tbody>
 			</table>
 		</div>
-	</div>        
+	</div>
 </div>
 @endsection
