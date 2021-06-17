@@ -2,7 +2,7 @@
 <link href="{{ asset('css/tables.css') }}" rel="stylesheet">
 @section('content')
 
-<div id="secretary" class="container">
+<div class="container">
   <div class="card">
       <div class="card-header" style="background-color: #435D7D; color:white; font-size: 15px">
           <h3>  معلومات عن <b>الزائر</b></h3>
@@ -63,6 +63,5 @@
         </div>
     </div>
 </div>
-
 @endsection
 

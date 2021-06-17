@@ -1,7 +1,7 @@
-window.Vue = require('vue');
+import axios from 'axios';
 
 window.app = new Vue({
-    el: "#secretary",
+    el: "#app",
     data: {
         submitUrl: window.submitUrl,
         name:"",
@@ -13,7 +13,7 @@ window.app = new Vue({
     methods: {
         submitForm()
         {
-            axios.post(this.submitUrl, {
+            axios.post('/secretary', {
                 'name': this.name,
                 'reason': this.reason,
                 'notes': this.notes,

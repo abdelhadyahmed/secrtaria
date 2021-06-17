@@ -1,5 +1,8 @@
 const mix = require('laravel-mix');
 
+mix.autoload({
+    vue: ["Vue", "window.Vue"]
+});
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
