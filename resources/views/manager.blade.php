@@ -1,7 +1,10 @@
 @extends('layouts.app')
 <link href="{{ asset('css/tables.css') }}" rel="stylesheet">
 @section('content')
-
+{{-- @php
+	$url1=$_SERVER['REQUEST_URI'];
+    header("Refresh: 10; URL=$url1");
+@endphp --}}
 <div class="container">
 	<div class="table-responsive">
 		<div class="table-wrapper">

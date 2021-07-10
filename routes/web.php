@@ -24,7 +24,7 @@ Route::get('/manager', 'ManagerController@index');
 
 //secretar routes
 Route::get('/secretary', 'SecretaryController@index');
-Route::post('/secretary', 'SecretaryController@create')->name("secretary.create");
+Route::post('/secretary', 'SecretaryController@create');
 
 //other routes
 Auth::routes();
