@@ -17,5 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/manager', 'ManagerController@index');
+// manager apis
+Route::get('/manager', 'ManagerController@get_visitors');
+Route::post('/deleteVisitor/{id}', 'ManagerController@delete');
+
 Route::post('/secretary', 'SecretaryController@create');

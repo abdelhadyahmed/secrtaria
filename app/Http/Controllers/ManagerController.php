@@ -8,8 +8,11 @@ use PHPUnit\Util\Json;
 
 class ManagerController extends Controller
 {
-    public function index(){
+    public function get_visitors(){
         $visitors = DB::table('visitors')->get();
         return json_encode($visitors);
+    }
+    public function delete($id){
+        DB::table('visitors')->where('id', $id)->delete();
     }
 }
