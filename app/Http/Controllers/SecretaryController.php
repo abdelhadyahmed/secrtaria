@@ -25,6 +25,12 @@ class SecretaryController extends Controller
                 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()
             ]
         );
-        return back();
+    }
+    public function getVisitorsCommand(){
+        $visitors = DB::table('command')->get();
+        return json_encode($visitors);
+    }
+    public function deleteVisitorCommand($id){
+        DB::table('command')->where('id', $id)->delete();
     }
 }

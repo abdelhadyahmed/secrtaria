@@ -20,5 +20,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // manager apis
 Route::get('/manager', 'ManagerController@get_visitors');
 Route::post('/deleteVisitor/{id}', 'ManagerController@delete');
+Route::post('/command_to_secrtary', 'ManagerController@command_to_secrtary');
+
 
 Route::post('/secretary', 'SecretaryController@create');
+Route::get('/getVisitorsCommand', 'SecretaryController@getVisitorsCommand');
+Route::post('/deleteVisitorCommand/{id}', 'SecretaryController@deleteVisitorCommand');
+

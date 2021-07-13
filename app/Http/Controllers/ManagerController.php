@@ -15,4 +15,18 @@ class ManagerController extends Controller
     public function delete($id){
         DB::table('visitors')->where('id', $id)->delete();
     }
+    public function command_to_secrtary(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'command' => 'required',
+        ]);
+        DB::table('command')->insert(
+            [
+                'name' => $request->name,
+                'command' => $request->command,
+                'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => \Carbon\Carbon::now()->toDateTimeString()
+            ]
+        );
+    }
 }
