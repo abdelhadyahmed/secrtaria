@@ -9,7 +9,7 @@ use PHPUnit\Util\Json;
 class ManagerController extends Controller
 {
     public function get_visitors(){
-        $visitors = DB::table('visitors')->get();
+        $visitors = DB::table('visitors')->orderBy('created_at', 'desc')->get();
         return json_encode($visitors);
     }
     public function delete($id){

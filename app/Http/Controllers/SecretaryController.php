@@ -27,7 +27,7 @@ class SecretaryController extends Controller
         );
     }
     public function getVisitorsCommand(){
-        $visitors = DB::table('command')->get();
+        $visitors = DB::table('command')->orderBy('created_at', 'desc')->get();
         return json_encode($visitors);
     }
     public function deleteVisitorCommand($id){
