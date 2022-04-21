@@ -13,14 +13,14 @@ class SecretaryController extends Controller
     public function create(Request $request){
         $request->validate([
             'name' => 'required',
-            'reason' => 'required',
-            'notes' => 'nullable',
+            'job' => 'required',
+            'reason' => 'nullable',
         ]);
         DB::table('visitors')->insert(
             [
                 'name' => $request->name,
+                'job' => $request->job,
                 'reason' => $request->reason,
-                'notes' => $request->notes,
                 'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
                 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()
             ]
@@ -30,7 +30,11 @@ class SecretaryController extends Controller
         $visitors = DB::table('command')->orderBy('created_at', 'desc')->get();
         return json_encode($visitors);
     }
+
     public function deleteVisitorCommand($id){
         DB::table('command')->where('id', $id)->delete();
+    }
+    public function deleteAllVisitorsCommand(){
+        DB::table('command')->delete();
     }
 }

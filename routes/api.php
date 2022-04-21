@@ -22,8 +22,9 @@ Route::get('/manager', 'ManagerController@get_visitors');
 Route::post('/deleteVisitor/{id}', 'ManagerController@delete');
 Route::post('/command_to_secrtary', 'ManagerController@command_to_secrtary');
 
-
+// secretary apis
 Route::post('/secretary', 'SecretaryController@create');
 Route::get('/getVisitorsCommand', 'SecretaryController@getVisitorsCommand');
 Route::post('/deleteVisitorCommand/{id}', 'SecretaryController@deleteVisitorCommand');
+Route::post('/deleteAllVisitorsCommand', 'SecretaryController@deleteAllVisitorsCommand');
 
